@@ -6,6 +6,7 @@ import CartPage from "../pages/CartPage";
 import CheckoutPage from "../pages/CheckoutPage";
 import ProductPage from "../pages/ProductPage";
 import SuccessPage from "../pages/SuccessPage";
+import NotFoundPage from "../pages/NotFoundPage";
 
 
 
@@ -33,7 +34,11 @@ export const router = createBrowserRouter([
             {
                 path: SUCCESS,
                 element: <SuccessPage/>
-            }
+            },
+            {
+                path: '*',
+                element: <NotFoundPage/>,
+}
         ]
     }
 ])
