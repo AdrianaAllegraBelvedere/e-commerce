@@ -1,0 +1,75 @@
+.appHeader {
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 12px 14px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.logo {
+  width: 34px;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 99px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  flex: 1;
+}
+
+.searchIcon {
+  opacity: 0.6;
+  fill: #111;
+}
+
+.searchInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #111;
+}
+
+.searchInput::placeholder {
+  color: rgba(17, 17, 17, 0.45);
+}
+
+
+.cartButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+}
+
+
+@media (min-width: 768px) {
+ 
+  .searchContainer {
+    flex: none;
+    max-width: 500px;
+    min-width: 350px;
+  }
+  .logo{
+    width: 70px;
+  }
+  .header{
+    justify-content: space-between;
+  }
+}
+
