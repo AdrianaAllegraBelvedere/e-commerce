@@ -2,15 +2,24 @@ import { Link } from "react-router-dom"
 import type { CarouselProps } from "../interfaces/slide"
 
 import '../styles/Carousel.css'
-import { useState } from "react"
+import { useState, useEffect  } from "react"
 
 
 export const Carousel = ({ slides }: CarouselProps) => {
+
+   useEffect(() => {
+      const interval = setInterval(() => {
+        goNext()
+      }, 3000)
+
+      return () => clearInterval(interval)
+    }, [goNext])
+
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const currentSlide = slides[currentIndex]
 
-  const goNext = () => {
+  function goNext () {
   setCurrentIndex((prevIndex) =>
     prevIndex === slides.length - 1 ? 0 : prevIndex + 1
   )
@@ -21,6 +30,10 @@ export const Carousel = ({ slides }: CarouselProps) => {
       prevIndex === 0 ? slides.length - 1 : prevIndex - 1
     )
   }
+
+ 
+
+
   return (
     <div className="carousel">
       <button
